@@ -1,0 +1,239 @@
+
+			<group name="forumpermissions">
+				<bitfield name="canview"                    group="forum_viewing_permissions"   phrase="can_view_forum"                install="1,2,3,4,5,6,7,9,10">1</bitfield>
+				<bitfield name="canviewthreads"             group="forum_viewing_permissions"   phrase="can_view_threads"              install="1,2,3,4,5,6,7,9,10">524288</bitfield>
+				<bitfield name="canviewothers"              group="forum_viewing_permissions"   phrase="can_view_others_threads"       install="1,2,3,4,5,6,7,9,10">2</bitfield>
+				<bitfield name="cansearch"                  group="forum_searching_permissions" phrase="can_search_forums"             install="1,2,3,4,5,6,7,9,10">4</bitfield>
+				<bitfield name="canemail"                   group="forum_viewing_permissions"   phrase="can_use_email_to_friend"       install="1,2,3,4,5,6,7,9,10">8</bitfield>
+				<bitfield name="canpostnew"                 group="post_thread_permissions"     phrase="can_post_threads"              install="2,5,6,7,9,10"      >16</bitfield>
+				<bitfield name="canreply"                   group="post_thread_permissions"     phrase="can_reply_to_threads"          install="2,5,6,7,9,10"      >32</bitfield>
+				<bitfield name="caneditpost"                group="post_thread_permissions"     phrase="can_edit_own_posts"            install="2,5,6,7,9,10"      >128</bitfield>
+				<bitfield name="candeletepost"              group="post_thread_permissions"     phrase="can_delete_own_posts"          install="2,5,6,7,9,10"      >256</bitfield>
+				<bitfield name="candeletethread"            group="post_thread_permissions"     phrase="can_delete_own_threads"        install="5,6"               >512</bitfield>
+				<bitfield name="canopenclose"               group="post_thread_permissions"     phrase="can_open_close_own_threads"    install="5,6"               >1024</bitfield>
+				<bitfield name="canmove"                    group="post_thread_permissions"     phrase="can_move_own_threads"          install="5,6"               >2048</bitfield>
+				<bitfield name="cangetattachment"           group="attachment_permissions_gcppermission"   phrase="can_download_attachments"      install="2,5,6,7,9,10" displayorder="20"  >4096</bitfield>
+				<bitfield name="attachlimit" intperm="true" group="attachment_permissions_gcppermission"   phrase="space_in_bytes_attachlimit"    >1</bitfield>
+				<bitfield name="canpostpoll"                group="poll_permissions"            phrase="can_post_polls"                install="2,5,6,7,9,10"      >16384</bitfield>
+				<bitfield name="canvote"                    group="poll_permissions"            phrase="can_vote_on_polls"             install="2,5,6,7,9,10"      >32768</bitfield>
+				<bitfield name="canthreadrate"              group="post_thread_permissions"     phrase="can_rate_threads"              install="2,5,6,7,9,10"      >65536</bitfield>
+				<bitfield name="canseedelnotice"            group="forum_viewing_permissions"   phrase="can_see_deletion_notices"      install="5,6"          >262144</bitfield>
+				<bitfield name="cantagown"                  group="post_thread_permissions"     phrase="can_tag_own_threads"           install="2,5,6,7,9,10"      >1048576</bitfield>
+				<bitfield name="cantagothers"               group="post_thread_permissions"     phrase="can_tag_others_threads"        install="2,5,6,7,9,10"      >2097152</bitfield>
+				<bitfield name="candeletetagown"            group="post_thread_permissions"     phrase="can_delete_tags_own_threads"   install="5,6"          >4194304</bitfield>
+				<bitfield name="canseethumbnails"           group="attachment_permissions_gcppermission"   phrase="can_see_thumbnails"            install="2,5,6,7,9,10" displayorder="30" >8388608</bitfield>
+				<bitfield name="canattachmentcss"           group="attachment_permissions_gcppermission"      phrase="can_css_attachments"           install="6"          >16777216</bitfield>
+				<bitfield name="cancreateblog"              group="post_thread_permissions"     phrase="can_create_blog"               install="2,5,6,7,9,10"	  >134217728</bitfield>
+				<bitfield name="canjoin"                    group="forum_viewing_permissions"   phrase="can_join"                      install="2,5,6,7,9,10"	  >268435456</bitfield>
+				<bitfield name="canuploadchannelicon"       group="forum_viewing_permissions"   phrase="can_upload_channel_icons"      install="5,6,9">536870912</bitfield>
+				<bitfield name="cananimatedchannelicon"     group="forum_viewing_permissions"   phrase="can_use_animated_channel_icon" install="5,6,9">1073741824</bitfield>
+			</group>
+			<group name="forumpermissions2">
+				<bitfield name="canalwaysview"        group="forum_viewing_permissions" phrase="can_always_view_channel"        install="5,6"                   >1</bitfield>
+				<bitfield name="canalwayspost"        group="post_thread_permissions"   phrase="can_always_post_in_channel"     install="5,6"                   >2</bitfield>
+				<bitfield name="canalwayspostnew"     group="post_thread_permissions"   phrase="can_always_post_new_in_channel" install="5,6"                   >4</bitfield>
+				<bitfield name="canconfigchannel"     group="forum_viewing_permissions" phrase="can_configure_channel"          install="5,6,9"                 >8</bitfield>
+				<bitfield name="canusehtml"           group="post_thread_permissions"   phrase="can_use_html"                                                   >16</bitfield>
+				<bitfield name="canpublish"           group="post_thread_permissions"   phrase="can_publish"                    install="5,6"                   >32</bitfield>
+				<bitfield name="canmanageownchannels" group="post_thread_permissions"   phrase="can_manage_own_channels"        install="5,6,9"                 >64</bitfield>
+				<bitfield name="exemptfromspamcheck"  group="post_thread_permissions"   phrase="exempt_from_spam_check"         install="5,6,7"                 >128</bitfield>
+				<bitfield name="candeletechannel"     group="post_thread_permissions"   phrase="can_delete_channel"             install="5,6,7"                 >256</bitfield>
+				<bitfield name="cancomment"           group="post_thread_permissions"   phrase="can_comment"                    install="2,5,6,7,9,10"          >512</bitfield>
+				<bitfield name="caneditothers"        group="post_thread_permissions"   phrase="can_edit_others_content"        install=""                      >1024</bitfield>
+				<bitfield name="candeleteothers"      group="post_thread_permissions"   phrase="can_delete_others_content"      install=""                      >2048</bitfield>
+				<bitfield name="cangetimgattachment"  group="attachment_permissions_gcppermission" phrase="can_download_image_attachments" install="1,2,3,4,5,6,7,9,10" displayorder="10"  >4096</bitfield>
+				<bitfield name="skipmoderatetopics"   group="post_thread_permissions"   phrase="skip_moderation_topics"         install="2,3,4,5,6,7,9,10"    >8192</bitfield>
+				<bitfield name="skipmoderatereplies"  group="post_thread_permissions"   phrase="skip_moderation_replies"        install="2,3,4,5,6,7,9,10"    >16384</bitfield>
+				<bitfield name="skipmoderateattach"   group="post_thread_permissions"   phrase="skip_moderation_attachments"    install="2,3,4,5,6,7,9,10"    >32768</bitfield>
+				<bitfield name="cansetanswerown"      group="post_thread_permissions"   phrase="can_set_answer_own_topic"       install=""                    >65536</bitfield>
+			</group>
+			<group name="pmpermissions">
+				<bitfield name="pmquota"            intperm="true" group="private_message_permissions" phrase="maximum_stored_messages"                              >0</bitfield>
+				<bitfield name="cantrackpm"                        group="private_message_permissions" phrase="can_use_message_tracking"       install="2,5,6,7,9,10">1</bitfield>
+				<bitfield name="candenypmreceipts"                 group="private_message_permissions" phrase="can_deny_pm_receipt"            install="2,5,6,7,9,10">2</bitfield>
+				<bitfield name="canignorequota"                    group="private_message_permissions" phrase="can_ignore_quota"               install="5,6,7,9,10"  >4</bitfield>
+				<bitfield name="canusepmchat"                      group="private_message_permissions" phrase="can_use_pmchat"                 install="2,5,6,7"     >8</bitfield>
+				<bitfield name="pmsendmax"          intperm="true" group="private_message_permissions" phrase="maximum_recipients_to_send_pms"                       >1</bitfield>
+				<bitfield name="pmthrottlequantity" intperm="true" group="private_message_permissions" phrase="message_throttle_quantity"                            >1</bitfield>
+			</group>
+			<group name="wolpermissions">
+				<bitfield name="canwhosonline" group="whos_online_permissions" phrase="can_view_whos_online" install="2,5,6,7,9,10">1</bitfield>
+				<bitfield name="canwhosonlineip" group="whos_online_permissions" phrase="can_view_ip_addresses" install="5,6,7,9,10">2</bitfield>
+				<bitfield name="canwhosonlinefull" group="whos_online_permissions" phrase="can_view_wol_detail_location" install="5,6,7,9,10">4</bitfield>
+				<bitfield name="canwhosonlinebad" group="whos_online_permissions" phrase="can_view_wol_bad_location" install="5,6,7,9,10">8</bitfield>
+				<bitfield name="canwhosonlinelocation" group="whos_online_permissions" phrase="can_view_wol_actual_location" install="6">16</bitfield>
+			</group>
+			<group name="adminpermissions">
+				<bitfield name="ismoderator" group="administrator_permissions" phrase="is_super_moderator" install="5,6">1</bitfield>
+				<bitfield name="cancontrolpanel" group="administrator_permissions" phrase="can_access_control_panel" readonly="6" install="6">2</bitfield>
+				<bitfield name="canadminsettings" phrase="can_administer_limited_settings">4</bitfield>
+				<bitfield name="canadminstyles" phrase="can_administer_styles">8</bitfield>
+				<bitfield name="canadminlanguages" phrase="can_administer_languages">16</bitfield>
+				<bitfield name="canadminforums" phrase="can_administer_forums">32</bitfield>
+				<bitfield name="canadminthreads" phrase="can_administer_threads">64</bitfield>
+				<bitfield name="canadminusers" phrase="can_administer_users">256</bitfield>
+				<bitfield name="canadminpermissions" phrase="can_administer_user_permissions">512</bitfield>
+				<bitfield name="canadminfaq" phrase="can_administer_faq">1024</bitfield>
+				<bitfield name="canadminimages" phrase="can_administer_images">2048</bitfield>
+				<bitfield name="canadminbbcodes" phrase="can_administer_bbcodes">4096</bitfield>
+				<bitfield name="canadmincron" phrase="can_administer_cron">8192</bitfield>
+				<bitfield name="canadminmaintain" phrase="can_run_basic_maintenance">16384</bitfield>
+				<bitfield name="canadminproducts" phrase="can_administer_products">65536</bitfield>
+				<bitfield name="canadminnotices" phrase="can_administer_notices">131072</bitfield>
+				<bitfield name="canadminmodlog" phrase="can_administer_moderator_log">262144</bitfield>
+				<bitfield name="cansitemap" phrase="can_administer_xml_sitemap">524288</bitfield>
+				<bitfield name="canadminads" phrase="can_administer_ads">1048576</bitfield>
+				<bitfield name="canadmintags" phrase="can_administer_tags">2097152</bitfield>
+				<bitfield name="cansetdefaultprofile" phrase="can_set_default_user_profile">8388608</bitfield>
+				<bitfield name="canusesitebuilder" phrase="can_use_sitebuilder" install="6">16777216</bitfield>
+				<bitfield name="canadmintemplates" phrase="can_admin_templates" install="6">33554432</bitfield>
+				<bitfield name="canadminsettingsall" phrase="can_admin_all_settings" install="6">67108864</bitfield>
+				<bitfield name="cansetserverconfig" phrase="can_set_server_config" install="6">134217728</bitfield>
+				<bitfield name="canuseallmaintenance" phrase="can_use_all_maintenance" install="6">268435456</bitfield>
+				<bitfield name="canadmincms" phrase="can_administer_cms" install="6">536870912</bitfield>
+				<bitfield name="canadminrss" phrase="can_administer_rss" install="6">1073741824</bitfield>
+			</group>
+			<group name="genericpermissions">
+				<bitfield name="canviewmembers" group="general_permissions" phrase="can_view_member_info" install="2,3,4,5,6,7,9,10">1</bitfield>
+				<bitfield name="canmodifyprofile" group="general_permissions" phrase="can_edit_own_profile" install="2,3,4,5,6,7,9,10">2</bitfield>
+				<bitfield name="caninvisible" group="general_permissions" phrase="can_set_self_invisible" install="2,5,6,7,9,10">4</bitfield>
+				<bitfield name="canviewothersusernotes" group="user_note_permissions" phrase="can_view_others_user_notes" install="5,6,7,9,10">8</bitfield>
+				<bitfield name="canmanageownusernotes" group="user_note_permissions" phrase="can_manage_own_user_notes" install="6">16</bitfield>
+				<bitfield name="canseehidden" group="general_permissions" phrase="can_see_invisible_users" install="5,6">32</bitfield>
+				<bitfield name="canbeusernoted" group="user_note_permissions" phrase="other_users_can_be_posted" install="2,3,4,5,7,9,10">64</bitfield>
+				<bitfield name="canuseavatar" group="picture_uploading_permissions" phrase="can_upload_custom_avatars" install="2,5,6,7,9,10">512</bitfield>
+				<bitfield name="cananimateavatar" group="picture_uploading_permissions" phrase="can_upload_animated_avatar" install="2,5,6,7,9,10">67108864</bitfield>
+				<bitfield intperm="true" name="avatarmaxwidth" group="picture_uploading_permissions" phrase="custom_avatar_max_width">1</bitfield>
+				<bitfield intperm="true" name="avatarmaxheight" group="picture_uploading_permissions" phrase="custom_avatar_max_height">1</bitfield>
+				<bitfield intperm="true" name="avatarmaxsize" group="picture_uploading_permissions" phrase="custom_avatar_max_filesize">1</bitfield>
+				<bitfield name="canusesignature" group="signature_permissions" phrase="can_use_signatures" install="2,5,6,7,9,10">1024</bitfield>
+				<bitfield name="canusecustomtitle" group="general_permissions" phrase="can_use_custom_title" install="6">2048</bitfield>
+				<bitfield name="canviewownusernotes" group="user_note_permissions" phrase="can_view_own_user_notes" install="6">8192</bitfield>
+				<bitfield name="canmanageothersusernotes" group="user_note_permissions" phrase="can_manage_others_user_notes" install="5,6">16384</bitfield>
+				<bitfield name="canpostownusernotes" group="user_note_permissions" phrase="can_post_user_notes_about_self" install="6">32768</bitfield>
+				<bitfield name="canpostothersusernotes" group="user_note_permissions" phrase="can_post_user_notes_about_others" install="5,6,7,9,10">65536</bitfield>
+				<bitfield name="caneditownusernotes" group="user_note_permissions" phrase="can_edit_own_user_notes" install="5,6,7,9,10">131072</bitfield>
+				<bitfield name="canseehiddencustomfields" group="general_permissions" phrase="can_view_hidden_custom_fields" install="5,6,7,9,10">262144</bitfield>
+				<bitfield name="canseewholiked" group="post_thread_permissions" phrase="can_see_who_liked_a_post" install="6">256</bitfield>
+				<bitfield name="canuserep" group="user_reputation_permissions" phrase="can_use_reputation" install="2,5,6,7,9,10">524288</bitfield>
+				<bitfield name="cannegativerep" group="user_reputation_permissions" phrase="can_leave_negative_reputation" install="2,5,6,7,9,10">2097152</bitfield>
+				<bitfield name="cangiveinfraction" group="user_infraction_permissions" phrase="can_give_infractions" install="5,6,7,9,10">4194304</bitfield>
+				<bitfield name="canseeinfraction" group="user_infraction_permissions" phrase="can_see_others_infraction_level" install="5,6,7,9,10">8388608</bitfield>
+				<bitfield name="cangivearbinfraction" group="user_infraction_permissions" phrase="can_give_arbitrary_infractions" install="6">536870912</bitfield>
+				<bitfield name="canreverseinfraction" group="user_infraction_permissions" phrase="can_reverse_infractions" install="5,6,7,9,10">16777216</bitfield>
+				<bitfield name="cansearchft_bool" group="forum_searching_permissions" phrase="can_use_boolean_search" install="1,2,3,4,5,6,7,9,10">33554432</bitfield>
+				<bitfield name="canemailmember" group="general_permissions" phrase="can_email_members" install="2,5,6,7,9,10">268435456</bitfield>
+				<bitfield name="cancreatetag" group="post_thread_permissions" phrase="can_create_tags" install="2,5,6,7,9,10">1073741824</bitfield>
+			</group>
+			<group name="genericpermissions2">
+				<bitfield name="canusefriends" group="general_permissions" phrase="can_use_friends"         install="2,5,6,7,9,10">1</bitfield>
+				<bitfield name="canreferusers" group="general_permissions" phrase="can_refer_users"         install="2,5,6,7">8</bitfield>
+			</group>
+			<group name="albumpermissions">
+				<bitfield name="canalbum"                      group="user_album_permissions_gcppermission"                phrase="can_have_album" install="2,5,6,7,9,10" >1</bitfield>
+				<bitfield name="canviewalbum"                  group="user_album_permissions_gcppermission"                phrase="can_view_albums" install="2,5,6,7,9,10">2</bitfield>
+				<bitfield name="picturefollowforummoderation"  group="user_album_permissions_gcppermission"                phrase="follow_picture_moderation_rules" install="1,2,3,4,5,6,7,9,10">128</bitfield>
+				<bitfield name="albumpicmaxwidth"              group="user_album_permissions_gcppermission" intperm="true" phrase="album_picture_max_width"          >1</bitfield>
+				<bitfield name="albumpicmaxheight"             group="user_album_permissions_gcppermission" intperm="true" phrase="album_picture_max_height"         >1</bitfield>
+				<bitfield name="albummaxpics"                  group="user_album_permissions_gcppermission" intperm="true" phrase="album_max_pictures"               >1</bitfield>
+				<bitfield name="albummaxsize"                  group="user_album_permissions_gcppermission" intperm="true" phrase="album_max_size"                   >1</bitfield>
+				<bitfield name="canpiccomment"                 group="user_album_permissions_gcppermission"                phrase="can_comment_pictures" install="2,5,6,7,9,10">4</bitfield>
+				<bitfield name="caneditownpiccomment"          group="user_album_permissions_gcppermission"                phrase="can_edit_own_picture_comments" install="2,5,6,7,9,10">8</bitfield>
+				<bitfield name="candeleteownpiccomment"        group="user_album_permissions_gcppermission"                phrase="can_delete_own_picture_comments" install="2,5,6,7,9,10">16</bitfield>
+				<bitfield name="canmanagepiccomment"           group="user_album_permissions_gcppermission"                phrase="can_manage_comments_own_pictures" install="2,5,6,7,9,10">32</bitfield>
+				<bitfield name="commentfollowforummoderation"  group="user_album_permissions_gcppermission"                phrase="follow_picture_comment_moderation_rules" install="1,2,3,4,5,6,7,9,10">64</bitfield>
+			</group>
+			<group name="usercsspermissions">
+				<bitfield name="caneditfontfamily" group="usercss_permissions" phrase="can_edit_font_family"      install="2,5,6,7,9,10">1</bitfield>
+				<bitfield name="caneditfontsize"   group="usercss_permissions" phrase="can_edit_font_size"        install="2,5,6,7,9,10">2</bitfield>
+				<bitfield name="caneditcolors"     group="usercss_permissions" phrase="can_edit_colors"           install="2,5,6,7,9,10">4</bitfield>
+				<bitfield name="caneditbgimage"    group="usercss_permissions" phrase="can_edit_background_image" install="2,5,6,7,9,10">8</bitfield>
+				<bitfield name="caneditborders"    group="usercss_permissions" phrase="can_edit_borders"          install="2,5,6,7,9,10">16</bitfield>
+				<bitfield name="caneditprivacy"    group="usercss_permissions" phrase="can_edit_privacy"          install="2,5,6,7,9,10">32</bitfield>
+				<bitfield name="cancustomize"      group="usercss_permissions" phrase="can_customize_profile"     install="2,5,6,7,9,10">128</bitfield>
+			</group>
+			<group name="genericoptions">
+				<bitfield name="showgroup"         group="usergroup_options_gcppermission"   phrase="viewable_on_showgroups"                 install="5,6"          >1</bitfield>
+				<bitfield name="showbirthday"      group="usergroup_options_gcppermission"   phrase="birthdays_viewable"                     install="2,5,6,7,9,10"      >2</bitfield>
+				<bitfield name="showmemberlist"    group="usergroup_options_gcppermission"   phrase="viewable_on_memberlist"                 install="2,5,6,7,9,10"      >4</bitfield>
+				<bitfield name="showeditedby"      group="general_permissions" phrase="show_edited_by_note_on_edited_messages"               install="1,2,3,4,5,7,9,10"  >8</bitfield>
+				<bitfield name="allowmembergroups" group="usergroup_options_gcppermission"   phrase="allow_member_groups"                    install="2,3,4,5,6,7,9,10"  >16</bitfield>
+				<bitfield name="isnotbannedgroup"  group="usergroup_options_gcppermission"   phrase="is_banned_group"                        install="1,2,3,4,5,6,7,9,10">32</bitfield>
+				<bitfield name="requirehvcheck"    group="usergroup_options_gcppermission"   phrase="require_hv_check"                       install="1"            >64</bitfield>
+			</group>
+			<group name="signaturepermissions">
+				<bitfield group="signature_permissions" intperm="true"          name="sigmaxrawchars" phrase="sig_max_raw_chars">1</bitfield>
+				<bitfield group="signature_permissions" intperm="true"          name="sigmaxchars" phrase="sig_max_chars">1</bitfield>
+				<bitfield group="signature_permissions" intperm="true"          name="sigmaxlines" phrase="sig_max_lines">1</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcode" phrase="allow_bbcode">131072</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodebasic"   phrase="allow_bbcode_basic">1</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodecolor"   phrase="allow_bbcode_color">2</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodesize"    phrase="allow_bbcode_size">4</bitfield>
+				<bitfield group="signature_permissions" intperm="true"          name="sigmaxsizebbcode" phrase="sig_max_size_bbcode">1</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodefont"    phrase="allow_bbcode_font">8</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodealign"   phrase="allow_bbcode_align">16</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodelist"    phrase="allow_bbcode_list">32</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodelink"    phrase="allow_bbcode_link">64</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodecode"    phrase="allow_bbcode_code">128</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodephp"     phrase="allow_bbcode_php">256</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodehtml"    phrase="allow_bbcode_html">512</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="canbbcodequote"   phrase="allow_bbcode_quote">1024</bitfield>
+				<bitfield group="signature_permissions" install="5,6,7,9,10"         name="allowimg"         phrase="allow_bbcode_img">2048</bitfield>
+				<bitfield group="signature_permissions" intperm="true" name="sigmaximages" phrase="sig_max_images">1</bitfield>
+				<bitfield group="signature_permissions" install="2,5,6,7,9,10"       name="allowsmilies"     phrase="allow_smilies">4096</bitfield>
+				<bitfield group="signature_permissions"                         name="allowhtml"        phrase="allow_html">8192</bitfield>
+				<bitfield group="picture_uploading_permissions" install="5,6,7,9,10"         name="cansigpic"        phrase="can_upload_sig_img">32768</bitfield>
+				<bitfield group="picture_uploading_permissions" install="5,6,7,9,10" name="cananimatesigpic" phrase="can_upload_ani_gif_sig_img">65536</bitfield>
+				<bitfield group="picture_uploading_permissions" intperm="true"  name="sigpicmaxwidth" phrase="sig_image_max_width">1</bitfield>
+				<bitfield group="picture_uploading_permissions" intperm="true"  name="sigpicmaxheight" phrase="sig_image_max_height">1</bitfield>
+				<bitfield group="picture_uploading_permissions" intperm="true"  name="sigpicmaxsize" phrase="sig_image_max_filesize">1</bitfield>
+			</group>
+			<group name="visitormessagepermissions">
+				<bitfield group="visitor_message_permissions" name="canmessageownprofile"    phrase="can_post_visitor_messages_to_own_profile"    install="2,5,6,7,9,10"      >1</bitfield>
+				<bitfield group="visitor_message_permissions" name="canmessageothersprofile" phrase="can_post_visitor_messages_to_others_profile" install="2,5,6,7,9,10"      >2</bitfield>
+				<bitfield group="visitor_message_permissions" name="caneditownmessages"      phrase="can_edit_own_visitor_messages"               install="2,5,6,7,9,10"      >4</bitfield>
+				<bitfield group="visitor_message_permissions" name="candeleteownmessages"    phrase="can_delete_own_visitor_messages"             install="2,5,6,7,9,10"      >8</bitfield>
+				<bitfield group="visitor_message_permissions" name="canmanageownprofile"     phrase="can_manage_own_visitor_messages"             install="2,5,6,7,9,10"      >32</bitfield>
+				<bitfield group="visitor_message_permissions" name="followforummoderation"   phrase="follow_visitor_message_moderation_rules"     install="1,2,3,4,5,6,7,9,10">16</bitfield>
+			</group>
+			<group name="socialgrouppermissions">
+				<bitfield group="social_group_permissions" name="canjoingroups"                                                             install="2,5,6,7,9,10"      >1</bitfield>
+				<bitfield group="social_group_permissions" name="cancreategroups"                                                           install="2,5,6,7,9,10"      >2</bitfield>
+				<bitfield group="social_group_permissions" name="maximumsocialgroups"                                                            intperm="true"         >1</bitfield>
+				<bitfield group="social_group_permissions" name="canmanageowngroups"                                                        install="2,5,6,7,9,10"      >256</bitfield>
+				<bitfield group="social_group_permissions" name="caneditowngroups"                                                          install="2,5,6,7,9,10"      >4</bitfield>
+				<bitfield group="social_group_permissions" name="candeleteowngroups"                                                        install="5,6,7,9,10"        >8</bitfield>
+				<bitfield group="social_group_permissions" name="canviewgroups"              phrase="can_view_social_groups"                install="1,2,5,6,7,9,10"      >16</bitfield>
+				<bitfield group="social_group_permissions" name="canpostmessage"                                                            install="2,5,6,7,9,10"      >512</bitfield>
+				<bitfield group="social_group_permissions" name="canalwayspostmessage"                                                      install="5,6,7,9,10"        >128</bitfield>
+				<bitfield group="social_group_permissions" name="canmanagemessages"                                                         install="2,5,6,7,9,10"      >32</bitfield>
+				<bitfield group="social_group_permissions" name="cancreatediscussion"        phrase="can_create_discussion"                 install="2,5,6,7,9,10"      >1024</bitfield>
+				<bitfield group="social_group_permissions" name="canalwayscreatediscussion"                                                 install="5,6,7,9,10"        >2048</bitfield>
+				<bitfield group="social_group_permissions" name="canlimitdiscussion"                                                        install="2,5,6,7,9,10"      >4096</bitfield>
+				<bitfield group="social_group_permissions" name="canmanagediscussions"                                                      install="5,6,7,9,10"        >8192</bitfield>
+				<bitfield group="social_group_permissions" name="followforummoderation"                                                     install="1,2,3,4,5,6,7,9,10">64</bitfield>
+				<bitfield group="social_group_permissions" name="canuploadgroupicon"                                                        install="2,5,6,7,9,10"      >16384</bitfield>
+				<bitfield group="social_group_permissions" name="cananimategroupicon"                                                       install="2,5,6,7,9,10"      >32768</bitfield>
+				<bitfield group="social_group_permissions" name="groupiconmaxsize"                                                               intperm="true"         >1</bitfield>
+				<bitfield group="social_group_permissions" name="canupload"                                                                 install="2,5,6,7,9,10"      >65536</bitfield>
+				<bitfield group="social_group_permissions" name="groupfollowforummoderation"                                                install="1,2,3,4,5,6,7,9,10">131072</bitfield>
+			</group>
+			<group name="createpermissions">
+				<bitfield group="createpermissions"        name="vbforum_channel"               phrase="can_create_channel"                 install="6"            >1</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_text"                  phrase="can_create_text"                    install="2,3,4,5,6,7,9,10"  >2</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_report"       			phrase="can_create_report"                  install="5,6"          >4</bitfield>
+				<!--The bitfield values for 8, 16, 32, 64, 128, 256, 512 and 1024 were used in vB4 CMS, but are no longer used by vB4 or vB5 -->
+				<!--There was a bitfield vbforum_calendar that should handle create calendar permission, but there are no calendars in vB5 -->
+				<bitfield group="createpermissions"        name="vbforum_gallery"         	    phrase="can_create_gallery"                 install="2,5,6,7,9,10"      >4096</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_poll"             	    phrase="can_poll"                           install="2,5,6,7,9,10"      >8192</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_attach"             	phrase="can_create_attach"                  install="2,3,4,5,6,7,9,10"  >16384</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_photo"             	phrase="can_create_photo"                   install="2,3,4,5,6,7,9,10"  >32768</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_privatemessage"       	phrase="can_create_privatemessage"          install="2,3,4,5,6,7,9,10"  >65536</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_video"       			phrase="can_create_video"          			install="2,3,4,5,6,7,9,10"  >131072</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_link"       			phrase="can_create_link"          			install="2,3,4,5,6,7,9,10"  >262144</bitfield>
+				<bitfield group="createpermissions"        name="vbforum_event"       			phrase="can_create_event"          			install="2,5,6,7,9,10"      >524288</bitfield>
+			</group>
+		</group>
+
+
+

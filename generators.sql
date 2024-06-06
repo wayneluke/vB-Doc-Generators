@@ -16,36 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `docs_stylevars`
---
-
-DROP TABLE IF EXISTS `docs_stylevars`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `docs_stylevars` (
-  `varname` varchar(100) NOT NULL,
-  `documentation` mediumtext,
-  `example` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`varname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `docs_widgets`
---
-
-DROP TABLE IF EXISTS `docs_widgets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `docs_widgets` (
-  `guid` varchar(100) NOT NULL,
-  `documentation` mediumtext,
-  `imagepath` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `docs_settinggroup`
 --
 
@@ -57,36 +27,6 @@ CREATE TABLE `docs_settinggroup` (
   `documentation` mediumtext,
   `imagepath` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`grouptitle`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `docs_stylevargroup`
---
-
-DROP TABLE IF EXISTS `docs_stylevargroup`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `docs_stylevargroup` (
-  `stylevargroup` varchar(100) DEFAULT NULL,
-  `documentation` mediumtext,
-  `imagepath` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `docs_pages`
---
-
-DROP TABLE IF EXISTS `docs_pages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `docs_pages` (
-  `guid` varchar(100) NOT NULL,
-  `title` varchar(100) DEFAULT NULL,
-  `documentation` mediumtext,
-  `modules` varchar(2500) DEFAULT NULL COMMENT 'comma separate list of modules on the default page.',
-  PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,6 +48,38 @@ CREATE TABLE `docs_permissions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `docs_pages`
+--
+
+DROP TABLE IF EXISTS `docs_pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `docs_pages` (
+  `guid` varchar(100) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `documentation` mediumtext,
+  `modules` varchar(2500) DEFAULT NULL COMMENT 'comma separate list of modules on the default page.',
+  `url_prefix` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`guid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `docs_stylevars`
+--
+
+DROP TABLE IF EXISTS `docs_stylevars`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `docs_stylevars` (
+  `varname` varchar(100) NOT NULL,
+  `documentation` mediumtext,
+  `example` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`varname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `docs_settings`
 --
 
@@ -122,6 +94,36 @@ CREATE TABLE `docs_settings` (
   PRIMARY KEY (`varname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `docs_widgets`
+--
+
+DROP TABLE IF EXISTS `docs_widgets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `docs_widgets` (
+  `guid` varchar(100) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `documentation` mediumtext,
+  `imagepath` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`guid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `docs_stylevargroup`
+--
+
+DROP TABLE IF EXISTS `docs_stylevargroup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `docs_stylevargroup` (
+  `stylevargroup` varchar(100) DEFAULT NULL,
+  `documentation` mediumtext,
+  `imagepath` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -132,4 +134,4 @@ CREATE TABLE `docs_settings` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-29 12:30:48
+-- Dump completed on 2024-06-06 14:04:35

@@ -14,6 +14,7 @@ class Database extends PDO
      * __construct
      * 
      * Sets up the variables needed to create a database connection. Calls the parent PDO class to create the connection.
+     * Variables are defined and read from /config/settings.ini
      * 
      * @param string $host Database Server Name.
      * @param string $dbname Database Name

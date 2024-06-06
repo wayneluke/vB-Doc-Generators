@@ -1,5 +1,25 @@
 <?php
 
+// String functions.
+
+
+// Determines if a string is a serialized array, a json encoded string, or just a string.
+// Returns false if just a string. returns the decoded array if serialized or JSON.
+
+function decodeString ($str) 
+{
+    if (json_validate($str)) {
+        return json_decode($str);
+    }
+
+    $data = unserialize($str);
+    if ($str === 'b:0;' || $data !== false) {
+        return $data;
+    }
+
+    return false;
+}
+
 // Filesystem functions. 
 
 function cleanOutput($dir) 

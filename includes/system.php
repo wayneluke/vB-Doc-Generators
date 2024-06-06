@@ -1,5 +1,9 @@
 <?php
 
+// Sets up the system with some variables used for creating output. 
+// Each variable is defined in /config/settings.ini and retrieved by
+// method calls.
+
 class System {
 
     private $outputDirectory;
@@ -13,7 +17,7 @@ class System {
         ini_set("error_log", $location . "/logs/php_error.log");
         date_default_timezone_set ('America/Los_Angeles');
     
-        if (!$settings = parse_ini_file($file, TRUE)) throw new exception('Unable to open ' . $file . '.');
+        if (!$settings = parse_ini_file($file, TRUE)) throw new exception('Unable to open the settings file at ' . $file . '.');
         $this->outputDirectory = $location . '/' . $settings['system']['outputDirectory'];
         $this->outputType = $settings['system']['outputType'];
     }

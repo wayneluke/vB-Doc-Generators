@@ -25,7 +25,10 @@ if (!empty($db)) {
 //--------------------------------------------
 
 $separator=DIRECTORY_SEPARATOR;
-$outDir = $sys->outputDirectory . $separator . 'settings' . $separator . 'options';
+$separator=DIRECTORY_SEPARATOR;
+$outDir = $sys->outputDir() . $separator . 'options';
+$type = $sys->format(); // Type of template to output.
+
 
 // Setup Variables for page generation.
 
@@ -45,6 +48,9 @@ $groups = $db->run_query($Queries['groups']);
 
 $itemReplace=[];
 $currentItem='';
+
+// Need a clean output directory.
+cleanOutput($outDir);
 
 foreach ($groups as $group) {
     if ($group['displayorder']==0){

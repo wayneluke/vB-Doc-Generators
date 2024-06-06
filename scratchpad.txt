@@ -1,0 +1,5 @@
+SELECT wd.widgetid, w.template, w.icon, wd.name, p.text FROM widgetdefinition AS wd
+  JOIN widget AS w ON (w.widgetid = wd.widgetid)
+  JOIN phrase AS p ON (wd.labelphrase = p.varname)
+  WHERE w.template !='';
+ 

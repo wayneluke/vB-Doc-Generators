@@ -14,8 +14,8 @@ require_once('./includes/template.php');
 require_once('./includes/functions.php');
 
 // Setup System
-$sys = new System("./config/settings.ini", __DIR__);
-$db = new Database("./config/settings.ini");
+$sys = new System(__DIR__ . "/config/settings.ini", __DIR__);
+$db = new Database(__DIR__ . "/config/settings.ini");
 if (!empty($db)) {
     echo "Database Connection Successful\n\r";
 } else {

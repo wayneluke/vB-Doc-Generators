@@ -4,6 +4,7 @@ class System {
 
     private $outputDirectory;
     private $outputType;
+    private $language;
 
     public function __construct ($file, $location) {
 
@@ -17,7 +18,7 @@ class System {
         $this->outputType = $settings['system']['outputType'];
     }
 
-    public function outputDir()
+    public function output()
     {
         return $this->outputDirectory;
     }
@@ -25,5 +26,10 @@ class System {
     public function format()
     {
         return $this->outputType;
+    }
+
+    public function language()
+    {
+        return $this->language;
     }
 }

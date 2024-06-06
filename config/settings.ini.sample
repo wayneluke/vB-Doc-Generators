@@ -1,6 +1,11 @@
 [system]
+; Where to write the files. 
 outputDirectory = "output"
+; Types = html or md
 outputType = "html"
+; Language of the output
+; -1=Default/English, 2=Spanish, 3=French, 4=German
+language = -1
 
 [database]
 driver = mysql

@@ -1,12 +1,20 @@
-## Module Data
+## Data Population Queries
 
-### Get Options for modules. 
+### Populate docs_pages
 
-A basic query to get the module options from the database. Need to break it up because I don't like the data format.
+INSERT INTO docs_pages (guid, pagetemplateid, title, abstract, url_prefix)
+    SELECT p.guid, p.pagetemplateid, p.title, p.metadescription, r.prefix FROM page AS p
+        LEFT JOIN routenew AS r ON (p.routeid=r.routeid)
+        WHERE p.pagetype='default' AND p.product='vbulletin'
 
-SELECT wd.widgetid, w.template, w.icon, wd.name, p.text FROM widgetdefinition AS wd
-  JOIN widget AS w ON (w.widgetid = wd.widgetid)
-  JOIN phrase AS p ON (wd.labelphrase = p.varname)
-  WHERE w.template !='';
- 
+#### Add widget list via PHP
 
+For each guid, match the pagetemplateid with the entry in the widgetinstance table. Create comma separated list.
+
+
+### Populate docs_widgets
+
+INSERT INTO docs_widgets (guid, title, category, imagepath) 
+    SELECT w.guid, p.text, w.category, w.icon FROM widget AS w
+    JOIN phrase AS p ON (p.varname = CONCAT(w.template,'_widgettitle'))
+    WHERE w.category !='Abstract' AND w.product='vbulletin' AND p.languageid=-1;

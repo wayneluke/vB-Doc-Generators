@@ -33,8 +33,12 @@ class Database extends PDO
             ':host=' . $settings['database']['host'] .
             ((!empty($settings['database']['port'])) ? (';port=' . $settings['database']['port']) : '') .
             ';dbname=' . $settings['database']['schema'] . ';charset=' . $settings['database']['charset'];
-       
-        parent::__construct($dns, $settings['database']['username'], $settings['database']['password']);
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+        parent::__construct($dns, $settings['database']['username'], $settings['database']['password'], $options);
     }
 
     /**
@@ -59,7 +63,7 @@ class Database extends PDO
     }
 
     /**
-     * run-query
+     * fetch_query
      * 
      * Wrapper to run a query that will return a single row of results.
      * 

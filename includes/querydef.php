@@ -21,12 +21,16 @@ class QueryDefs {
     protected $options = [
             'groups'          => "SELECT sg.*, p.text AS title FROM {prefix}settinggroup AS sg 
                                   LEFT JOIN {prefix}phrase AS p ON (p.varname LIKE CONCAT('settinggroup_',sg.grouptitle)) 
-                                  WHERE sg.product='vbulletin' ORDER BY sg.displayorder",
-            'settings'        => "SELECT p.text AS 'title', p2.text AS 'description', s.varname, s.defaultvalue, s.datatype, s.displayorder FROM {prefix}setting AS s 
+                                  WHERE sg.product='vbulletin' AND p.languageid=-1 
+                                  ORDER BY sg.displayorder",
+            'settings'        => "SELECT p.text AS 'title', p2.text AS 'description', 
+                                    s.varname, s.defaultvalue, s.datatype, s.displayorder FROM {prefix}setting AS s 
                                   LEFT JOIN {prefix}settinggroup AS sg ON (s.grouptitle = sg.grouptitle) 
-                                  LEFT JOIN {prefix}phrase AS p ON (p.varname LIKE CONCAT('setting_', s.varname, '_title')) 
-                                  LEFT JOIN {prefix}phrase AS p2 ON (p2.varname LIKE CONCAT('setting_', s.varname, '_desc')) 
-                                  WHERE s.grouptitle=? ORDER BY s.displayorder",
+                                  LEFT JOIN {prefix}phrase AS p ON (p.varname LIKE CONCAT('setting_', s.varname, '_title') AND p.languageid=-1) 
+                                  LEFT JOIN {prefix}phrase AS p2 ON (p2.varname LIKE CONCAT('setting_', s.varname, '_desc') AND p2.languageid=-1) 
+                                  WHERE s.grouptitle=?
+                                  ORDER BY s.displayorder",
+            'help'             => "SELECT text FROM phrase WHERE varname LIKE CONCAT('options_options_',?,'_text') AND phrase.languageid=-1"
     ];
 
     protected $pages = [];

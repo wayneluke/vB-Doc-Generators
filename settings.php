@@ -26,7 +26,7 @@ if (!empty($db)) {
 
 $separator=DIRECTORY_SEPARATOR;
 $separator=DIRECTORY_SEPARATOR;
-$outDir = $sys->outputDir() . $separator . 'options';
+$outDir = $sys->output() . $separator . 'settings';
 $type = $sys->format(); // Type of template to output.
 
 
@@ -44,24 +44,29 @@ $clean = true;
 $version = $queries->getVersion($db);
 $now=date('Y-m-d h:ia');
 
-$groups = $db->run_query($Queries['groups']);
-
 $itemReplace=[];
 $currentItem='';
 
 // Need a clean output directory.
 cleanOutput($outDir);
 
+//$groups = $db->run_query($Queries['groups'],[$sys->language()]);
+$groups = $db->run_query($Queries['groups']);
 foreach ($groups as $group) {
     if ($group['displayorder']==0){
         continue;
     }
     echo $group['title'] . "\n\r";
+//    $settings = $db->run_query($Queries['settings'],[$group['grouptitle'],$sys->language()]);
     $settings = $db->run_query($Queries['settings'],[$group['grouptitle']]);
     $content='';
     foreach ($settings as $setting) {
         echo "\t". $setting['title'] ."\n\r";
-        $itemReplace=[$setting['title'],'',$setting['description'],'','',$setting['varname'],$setting['datatype'],htmlentities($setting['defaultvalue'])];
+
+        $help = $db->fetch_query($Queries['help'],[$setting['varname']]);
+        $adminhelp = $help ? $help['text'] : '';
+
+        $itemReplace=[$setting['title'],'',$setting['description'],$adminhelp,'',$setting['varname'],$setting['datatype'],htmlentities($setting['defaultvalue'])];
         $currentItem = new Template('setting');
         $content.=$currentItem->parse($contentTokens,$itemReplace);
     }

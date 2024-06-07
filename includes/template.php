@@ -15,8 +15,10 @@ class Template {
     }
 
     public function parse(array $tokens, array $values) {
-        $content=file_get_contents($this->template);
-        return str_replace($tokens, $values, $content);
+        $content = file_get_contents($this->template);
+        $content = str_replace($tokens, $values, $content);
+        $content = preg_replace("/\n\n+/s","\n",$content);
+        return $content;
     }
 
     public function render() {

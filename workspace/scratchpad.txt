@@ -18,3 +18,6 @@ INSERT INTO docs_widgets (guid, title, category, imagepath)
     SELECT w.guid, p.text, w.category, w.icon FROM widget AS w
     JOIN phrase AS p ON (p.varname = CONCAT(w.template,'_widgettitle'))
     WHERE w.category !='Abstract' AND w.product='vbulletin' AND p.languageid=-1;
+
+
+SELECT * FROM adminhelp WHERE ACTION='' AND optionname=''

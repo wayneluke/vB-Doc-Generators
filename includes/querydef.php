@@ -39,10 +39,12 @@ class QueryDefs {
 
 
     protected $stylevars = [
-            'groups'          => "SELECT DISTINCT(stylevargroup) FROM {prefix}stylevardfn ORDER BY stylevargroup ASC;",
-            'stylevars'       => "SELECT p1.text AS 'title', p2.text AS 'description', s.* FROM {prefix}stylevardfn AS s
-                                  LEFT JOIN {prefix}phrase AS p1 ON (p1.varname LIKE CONCAT('stylevar_', s.stylevarid, '_name')) 
-                                  LEFT JOIN {prefix}phrase AS p2 ON (p2.varname LIKE CONCAT('stylevar_', s.stylevarid, '_description')) 
+            'groups'          => "SELECT DISTINCT(stylevargroup) FROM {prefix}stylevardfn 
+                                  ORDER BY stylevargroup ASC;",
+            'groupdesc'       => "SELECT `text` FROM `phrase` WHERE `varname`=concat('doc_stylevar_group_',?)",
+            'stylevars'       => "SELECT p1.text AS 'title', p2.text AS 'description', s.* FROM {prefix} stylevardfn AS s
+                                  LEFT JOIN {prefix}phrase AS p1 ON (p1.varname LIKE CONCAT('stylevar_', s.stylevarid, '_name') AND p1.languageid=-1) 
+                                  LEFT JOIN {prefix}phrase AS p2 ON (p2.varname LIKE CONCAT('stylevar_', s.stylevarid, '_description') AND p2.languageid=-1) 
                                   WHERE stylevargroup=? ORDER BY s.stylevarid ASC", 
             'default_value'   => "SELECT value FROM {prefix}stylevar WHERE stylevarid=? AND styleid=-1",
     ];

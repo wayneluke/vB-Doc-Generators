@@ -25,12 +25,12 @@ if (!empty($db)) {
 //--------------------------------------------
 
 $separator=DIRECTORY_SEPARATOR;
-$outDir = $sys->outputDir() . $separator . 'stylevars';
+$outDir = $sys->output() . $separator . 'stylevars';
 $type = $sys->format(); // Type of template to output.
 
 // Setup Variables for page generation.
 
-$templateTokens=['~title~','~title_slug~','~date~','~group~','~version~','~content~','~weight~'];
+$templateTokens=['~title~','~description','~date~','~group~','~version~','~content~','~weight~'];
 $contentTokens=['~title~','~image~','~description~','~help~','~additionalinfo~','~varname~','~type~','~defaultvalue~'];
 $imageTokens=['~imageurl~','~caption~'];
 
@@ -45,6 +45,7 @@ $now=date('Y-m-d h:ia');
 
 $groups = $db->run_query($Queries['groups']);
 
+
 $itemReplace=[];
 $currentItem='';
 
@@ -54,6 +55,8 @@ cleanOutput($outDir);
 
 $pageCounter=10;
 foreach ($groups as $group) {
+    $description = $db->fetch_query($Queries['groupdesc'],[strtolower($group['stylevargroup'])]);
+    //print_r($description); die;
     echo $group['stylevargroup'] . "\n\r";
     $stylevars = $db->run_query($Queries['stylevars'],[$group['stylevargroup']]);
     $content='';
@@ -104,11 +107,9 @@ foreach ($groups as $group) {
             $stylevar['datatype'],       // type
             $value_list,                 // default values    
         ];
-        $currentItem = new Template('stylevar', $type);
+        $currentItem = new Template('stylevar_item', $type);
         $content.=$currentItem->parse($contentTokens,$itemReplace) . "\n";
     }
-    //$groupDir = $outDir . $separator . $group['stylevargroup'];
-    //createDirectory($groupDir);
     
     $pageCounter +=10;
     if ($group['stylevargroup']==='Global') { 
@@ -118,9 +119,9 @@ foreach ($groups as $group) {
     } else { 
         $weight = $pageCounter;
     }
-    $templateReplace=[$group['stylevargroup'], slugify($group['stylevargroup']), $now, $group['stylevargroup'], $version, $content, $weight];
+    $templateReplace=[$group['stylevargroup'], $description['text'], $now, $group['stylevargroup'], $version, $content, $weight];
 
-    $stylevarPage = new Template('page',$type);
+    $stylevarPage = new Template('stylevar_page',$type);
     $page=$stylevarPage->parse($templateTokens,$templateReplace);
     file_put_contents($outDir . $separator . $group['stylevargroup'] . '.'. $type, $page);
 

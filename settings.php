@@ -25,7 +25,6 @@ if (!empty($db)) {
 //--------------------------------------------
 
 $separator=DIRECTORY_SEPARATOR;
-$separator=DIRECTORY_SEPARATOR;
 $outDir = $sys->output() . $separator . 'settings';
 $type = $sys->format(); // Type of template to output.
 

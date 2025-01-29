@@ -46,7 +46,7 @@ function cleanOutput($dir)
 function writeFile (string $outDir, string $fileName, string $fileTxt) {
     if (!is_dir($outDir)) {
         // dir doesn't exist, make it
-        createDirectory($outDir);
+        cleanOutput($outDir);
       }
       echo 'Creating ' . $fileName . ' file. ' . PHP_EOL;
       file_put_contents($outDir.'/'.$fileName,$fileTxt);  

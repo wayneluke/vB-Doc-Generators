@@ -25,7 +25,8 @@ if (!empty($db)) {
 //--------------------------------------------
 
 $separator=DIRECTORY_SEPARATOR;
-$outDir = $sys->outputDirectory . $separator . 'userhelp';
+$outDir = $sys->output() . $separator . 'userhelp';
+echo    "Output Directory: " . $outdir . "\n";
 
 // Setup Variables for page generation.
 
@@ -50,14 +51,14 @@ foreach ($sections as $section) {
     echo $section['title'] . "\n\r";
     $pages = $db->run_query($Queries['pages'],[$section['faqname']]);
     $sectionDir = $outDir . $separator . slugify($section['faqname']);
-    createDirectory($sectionDir);    
+    CleanOutput($sectionDir);    
     foreach ($pages as $page) {
         echo "\t". $page['title'] ."\n\r";
         $templateReplace=[$page['title'], slugify($page['title']), $now, $version, $page['text'], $page['displayorder']];
 
-        $userHelpPage = new Template('page');
+        $userHelpPage = new Template('page',$sys->format());
         $fileOut=$userHelpPage->parse($templateTokens,$templateReplace);
-        file_put_contents($sectionDir . $separator . slugify($page['faqname']) . '.md', $fileOut);        
+        file_put_contents($sectionDir . $separator . slugify($page['faqname']) . "." . $sys->format() , $fileOut);        
     }
 }
 

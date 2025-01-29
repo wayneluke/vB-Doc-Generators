@@ -14,6 +14,7 @@ class System {
 
 
         ini_set('log_errors',1);
+        ini_set('display_errors',1);
         ini_set("error_log", $location . "/logs/php_error.log");
         date_default_timezone_set ('America/Los_Angeles');
     

@@ -6,7 +6,7 @@
 
 //    ****** REQUIRED ******
 
-$forumroot = '/volumes/secondary/sites/vbulletin/vb6';
+$forumroot = '/volumes/secondary/sites/vbulletin/docs';
 $productid = 'docgenerators';
 /*
 	Contents of these directories will be added to the checksum file.
